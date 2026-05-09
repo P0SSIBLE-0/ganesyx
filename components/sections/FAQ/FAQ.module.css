@@ -1,0 +1,154 @@
+.faq {
+  padding: var(--section-space) 0;
+  background: var(--background);
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.tabsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.tabs {
+  display: flex;
+  background: var(--background-alt);
+  padding: 0.4rem;
+  border-radius: var(--radius-full);
+  gap: 0.25rem;
+  position: relative;
+  border: 1px solid var(--border-light);
+}
+
+.tab {
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: var(--small-size);
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  transition: all var(--transition-base);
+  z-index: 1;
+}
+
+.tab:hover:not(.activeTab) {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.tab.activeTab {
+  color: var(--surface);
+}
+
+
+.activeIndicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--brand);
+  border-radius: var(--radius-full);
+  z-index: -1;
+}
+
+.content {
+  min-height: 400px;
+}
+
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: border-color var(--transition-base);
+}
+
+.item.open {
+  border-bottom-color: var(--border);
+}
+
+.questionButton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.question {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.icon {
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item:hover .icon {
+  color: var(--text-primary);
+}
+
+.answerWrapper {
+  overflow: hidden;
+}
+
+.answer {
+  padding-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .question {
+    font-size: 1.125rem;
+  }
+
+  .tabsWrapper {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .tabsWrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabs {
+    flex-shrink: 0;
+    margin: auto;
+  }
+
+  .tab {
+    padding: 0.4rem .8rem;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,139 @@
+.section {
+  padding: var(--section-space) 0;
+  overflow: hidden;
+}
+
+.marqueeWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.marquee {
+  display: flex;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+  /* Matches the gap to ensure seamless loop */
+  animation: scroll 45s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.card {
+  position: relative;
+  flex-shrink: 0;
+  width: 360px;
+  margin-top: 2.6rem;
+  padding: 3rem 2rem 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.starFilled {
+  color: #e8450e;
+  font-size: 0.875rem;
+}
+
+.star {
+  color: var(--border);
+  font-size: 0.875rem;
+}
+
+.content {
+  font-size: var(--small-size);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex: 1;
+  font-style: italic;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+  width: 100%;
+}
+
+.avatar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: var(--foreground);
+  color: var(--background);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+  border: 4px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--border-light);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.avatarImg {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--small-size);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.role {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 85vw;
+    max-width: 300px;
+    padding: 1.5rem;
+  }
+}

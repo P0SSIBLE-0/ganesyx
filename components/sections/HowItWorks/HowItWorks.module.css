@@ -1,0 +1,171 @@
+.section {
+  padding: var(--section-space) 0;
+  position: relative;
+  background-color: var(--background);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 2rem 2.5rem;
+  border-radius: var(--radius-md);
+  width: 75%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Staircase offsets and colors */
+.card0 {
+  margin-left: 0;
+  background-color: #e0eefa;
+}
+
+.card1 {
+  margin-left: 8.33%;
+  background-color: #94a8eae1;
+}
+
+.card2 {
+  margin-left: 16.66%;
+  background-color: #407bd9;
+}
+
+.card3 {
+  margin-left: 25%;
+  background-color: #330099b8;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.stepDescription {
+  font-size: var(--small-size);
+  line-height: 1.6;
+}
+
+/* Text colors based on background */
+.card0 .stepTitle,
+.card1 .stepTitle {
+  color: var(--text-primary);
+}
+
+.card0 .stepDescription,
+.card1 .stepDescription {
+  color: var(--text-secondary);
+}
+
+.card2 .stepTitle,
+.card3 .stepTitle {
+  color: #ffffff;
+}
+
+.card2 .stepDescription,
+.card3 .stepDescription {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  margin-top: -0.2rem;
+}
+
+/* Number colors */
+.card0 .stepNumber {
+  color: #00838f;
+}
+
+.card1 .stepNumber {
+  color: #4338ca;
+}
+
+.card2 .stepNumber {
+  color: #ffffff;
+}
+
+.card3 .stepNumber {
+  color: #4ade80;
+}
+
+@media (max-width: 900px) {
+  .list {
+    padding: 0 1rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  /* Reduce staircase effect so it doesn't overflow */
+  .card0 {
+    margin-left: 0;
+  }
+
+  .card1 {
+    margin-left: 4%;
+  }
+
+  .card2 {
+    margin-left: 8%;
+  }
+
+  .card3 {
+    margin-left: 12%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .card {
+    margin-left: 0 !important;
+    padding: 1.5rem 1.25rem;
+    gap: 1rem;
+  }
+
+  .stepNumber {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stepNumber {
+    margin-bottom: 0.5rem;
+  }
+}

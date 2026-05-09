@@ -1,0 +1,227 @@
+.about {
+  padding: var(--section-space) 0;
+  background: var(--background);
+  overflow: hidden;
+}
+
+.aboutWrapper {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  width: 32px;
+  height: 1.5px;
+  background: var(--accent);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--caption-size);
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* Blob wrapper positions blobs behind the glass card */
+.graphWrapper {
+  position: relative;
+  margin: 2rem 0 6rem;
+  width: 100%;
+  isolation: isolate;
+}
+
+/* Animated background blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+  width: 350px;
+  height: 350px;
+  top: -60px;
+  left: -80px;
+  background: radial-gradient(circle, #330099, #7b2cbf);
+  animation: blobMove1 12s ease-in-out infinite alternate;
+}
+
+.blob2 {
+  width: 280px;
+  height: 280px;
+  top: auto;
+  left: auto;
+  bottom: -40px;
+  right: 5%;
+  background: radial-gradient(circle, #3c096c, #560591);
+  animation: blobMove2 15s ease-in-out infinite alternate;
+  opacity: 0.28;
+}
+
+.blob3 {
+  width: 200px;
+  height: 200px;
+  top: 30%;
+  left: 45%;
+  background: radial-gradient(circle, #5a0dbf, #330099);
+  animation: blobMove3 10s ease-in-out infinite alternate;
+  opacity: 0.2;
+}
+
+@keyframes blobMove1 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(60px, 40px) scale(1.15);
+  }
+}
+
+@keyframes blobMove2 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(-50px, -30px) scale(1.1);
+  }
+}
+
+@keyframes blobMove3 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(30px, -50px) scale(1.2);
+  }
+}
+
+/* Glassmorphic card */
+.graphContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: 1rem;
+  background: rgb(176 176 176 / 31%);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(120, 80, 200, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 10px 90px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* Subtle noise texture overlay */
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: overlay;
+}
+
+.websiteTypesWrapper {
+  margin-top: 4rem;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.value {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.statDescription {
+  font-size: var(--small-size);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+@media (max-width: 900px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .graphContainer {
+    width: 95%;
+    margin: 0 auto;
+  }
+}

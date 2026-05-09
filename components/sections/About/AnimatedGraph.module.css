@@ -1,0 +1,160 @@
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+}
+
+.svgWrapper {
+  width: 100%;
+  aspect-ratio: 800 / 500;
+  position: relative;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.path {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1.5;
+  opacity: 0.2;
+}
+
+.neonPath {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.nodeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.nodeIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  transition: all var(--transition-base);
+  overflow: hidden;
+  z-index: 2;
+  padding: 12px;
+  /* Added padding to keep logos away from edges */
+}
+
+.nodeIcon img,
+.nodeIcon svg {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  object-fit: contain;
+}
+
+.iconNode {
+  width: 70px;
+  height: 70px;
+}
+
+.centerNode {
+  width: 80px;
+  height: 80px;
+}
+
+.centerNode .nodeIcon {
+  padding: 16px;
+}
+
+.nodeLabelLeft,
+.nodeLabelRight,
+.nodeLabelBottom {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  pointer-events: none;
+  position: absolute;
+  z-index: 5;
+  /* Ensure labels are above lines */
+}
+
+.nodeLabelLeft {
+  right: calc(100% + 1rem);
+  top: 50%;
+  transform: translateY(-50%);
+  color: #363636;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+}
+
+.nodeLabelRight {
+  left: calc(100% + 1rem);
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(48, 48, 48);
+  font-size: clamp(0.7rem, 2vw, 1rem);
+}
+
+.nodeLabelBottom {
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--brand);
+}
+
+.node:hover .nodeIcon {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--brand-light);
+}
+
+@media (max-width: 768px) {
+  .svgWrapper {
+    height: 400px;
+    aspect-ratio: auto;
+  }
+
+  .centerNode {
+    width: 64px;
+    height: 64px;
+  }
+
+  .iconNode {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nodeLabelLeft,
+  .nodeLabelRight {
+    display: none;
+  }
+}

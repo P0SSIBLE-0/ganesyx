@@ -1,0 +1,22 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1.05s step-end infinite;
+  margin-left: 2px;
+  font-weight: 300;
+  color: inherit;
+  opacity: 1;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

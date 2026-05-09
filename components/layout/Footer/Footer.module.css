@@ -1,0 +1,125 @@
+.footer {
+  background: var(--foreground);
+  color: #ffffff;
+  padding: 5rem 0 2rem;
+  margin-top: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.logoImg {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  filter: invert(1) brightness(1.5);
+}
+
+.description {
+  font-size: var(--small-size);
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.7;
+  max-width: 340px;
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.socialLink {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all var(--transition-base);
+  letter-spacing: 0.02em;
+}
+
+.socialLink:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.columnTitle {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.columnList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  list-style: none;
+}
+
+.columnLink {
+  font-size: var(--small-size);
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a.columnLink:hover {
+  color: #ffffff;
+}
+
+.bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.copyright {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+  }
+}

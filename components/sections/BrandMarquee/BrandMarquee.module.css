@@ -1,0 +1,82 @@
+.brands {
+  padding: 3rem 0;
+  background: var(--background);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 2.5rem;
+}
+
+.marquee {
+  display: flex;
+  width: fit-content;
+  gap: 5rem;
+  animation: scroll 40s linear infinite;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  flex-shrink: 0;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+  transition: all var(--transition-base);
+}
+
+.brandLogo:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.logoImg {
+  width: auto;
+  height: 56px;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 2.5rem));
+  }
+}
+
+/* Faded edges */
+.brands::before,
+.brands::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.brands::before {
+  left: 0;
+  background: linear-gradient(to right, var(--background), transparent);
+}
+
+.brands::after {
+  right: 0;
+  background: linear-gradient(to left, var(--background), transparent);
+}

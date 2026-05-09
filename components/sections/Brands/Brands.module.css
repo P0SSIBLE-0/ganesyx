@@ -1,0 +1,62 @@
+.brands {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  background: var(--background);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.centerText {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  letter-spacing: -0.04em;
+}
+
+.centerText span {
+  display: inline-block;
+}
+
+.italic {
+  font-family: "Georgia", serif; /* Fallback to a nice serif if needed, or rely on system */
+  font-style: italic;
+  font-weight: 400;
+  margin-left: 0.2em;
+}
+
+.floatingLogo {
+  position: absolute;
+  will-change: transform, opacity, filter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.floatingLogo img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .brands {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .floatingLogo img {
+    width: 40px;
+    height: 40px;
+  }
+}
