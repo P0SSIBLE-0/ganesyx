@@ -272,28 +272,60 @@ export const resultsData = [
 
 export const testimonialsData = [
   {
-    name: "Sarah Mitchell",
-    role: "CTO, LuxeWear",
+    name: "Rohan Mehra",
+    role: "Founder, Delhi Business Hub",
     content:
-      "Ganesyx completely rebuilt our backend. The performance gains were immediate, and our site hasn't gone down once since launch.",
+      "The Ganesyx team is one of the best digital marketing agency partners we have worked with. Their SEO, social media marketing, and performance marketing services delivered excellent business growth.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
+    avatar: "/avatar/avatar-rohan.png",
   },
   {
-    name: "James Chen",
-    role: "Founder, FinTrack",
+    name: "Priya Sharma",
+    role: "Marketing Head, Urban Growth Solutions",
     content:
-      "The technical expertise of the Ganesyx team is impressive. They handled our complex data visualization requirements with ease.",
+      "We were looking for a reliable website developer company and Ganesyx created a professional, user-friendly website that improved our online presence and conversions.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150",
+    avatar: "/avatar/avatar-priya-sharma.png",
   },
   {
-    name: "Emma Rodriguez",
-    role: "VP Technology, NovaTech",
+    name: "Ananya Kapoor",
+    role: "Marketing Manager, BrightEdge Solutions",
     content:
-      "They don't just write code — they understand product. Their technical decisions saved us months of rework later on.",
+      "Their expertise as a marketing agency for small business helped us generate quality leads through local SEO, PPC advertising, and content marketing.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150&h=150",
+    avatar: "/avatar/avatar-ananya-kapoor.png",
+  },
+  {
+    name: "Arjun Singhania",
+    role: "CEO, Nexa Retail",
+    content:
+      "Ganesyx handled our online marketing business campaigns professionally. Their performance marketing strategies significantly increased our traffic and customer engagement.",
+    rating: 5,
+    avatar: "/avatar/avatar-arjun-singhania.png",
+  },
+  {
+    name: "Ishita Verma",
+    role: "Founder, Urban Hive Media",
+    content:
+      "Their team transformed our digital marketing website with modern design, fast performance, and effective SEO optimization for better search rankings.",
+    rating: 5,
+    avatar: "/avatar/avatar-ishita-verma.png",
+  },
+  {
+    name: "Vikram Malhotra",
+    role: "Director, Visionary Tech Labs",
+    content:
+      "If you are searching for the best SEO company with strong expertise in website development and Google Ads management, Ganesyx is an excellent choice.",
+    rating: 5,
+    avatar: "/avatar/avatar-vikram-malhotra.png",
+  },
+  {
+    name: "Sneha Gupta",
+    role: "Co-Founder, Elevate Commerce",
+    content:
+      "The professionalism and technical expertise of the Ganesyx team in performance marketing, social media management, website development, and digital branding exceeded our expectations.",
+    rating: 5,
+    avatar: "/avatar/avatar-sneha-gupta.png",
   },
 ];
 

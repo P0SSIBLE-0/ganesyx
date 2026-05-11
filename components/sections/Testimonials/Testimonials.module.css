@@ -16,7 +16,7 @@
   gap: 1.25rem;
   padding-right: 1.25rem;
   /* Matches the gap to ensure seamless loop */
-  animation: scroll 25s linear infinite;
+  animation: scroll 30s linear infinite;
   width: max-content;
 }
 
