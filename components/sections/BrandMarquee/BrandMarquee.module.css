@@ -31,6 +31,7 @@
   flex-shrink: 0;
 }
 
+
 .brandLogo {
   display: flex;
   align-items: center;
@@ -79,4 +80,19 @@
 .brands::after {
   right: 0;
   background: linear-gradient(to left, var(--background), transparent);
+}
+
+
+@media (max-width: 768px) {
+  .track {
+    gap: 2rem;
+  }
+
+  .logoImg {
+    height: 42px;
+  }
+
+  .marquee {
+    animation: scroll 18s linear infinite;
+  }
 }

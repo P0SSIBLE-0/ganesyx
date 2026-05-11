@@ -1,4 +1,4 @@
-import { TrendingDown, MousePointerClick, Ghost, HeartCrack, Snail, Search, Target, Zap, Rocket, TrendingUp, DollarSign, Users, BarChart3, Code, Terminal, Cpu, ShieldCheck, Globe, Smartphone, Database, Layout, ShoppingBag, Landmark, Stethoscope, GraduationCap, Building2, ArrowUpRight } from "lucide-react";
+import { TrendingDown, MousePointerClick, Ghost, HeartCrack, Snail, Search, Target, Zap, Rocket, TrendingUp, DollarSign, Users, BarChart3, Code, Terminal, Cpu, ShieldCheck, Globe, Smartphone, Database, Layout, ShoppingBag, Landmark, Stethoscope, GraduationCap, Building2, ArrowUpRight, LayoutDashboard } from "lucide-react";
 
 // Data exports for Ganesyx website
 
@@ -12,11 +12,11 @@ export const navLinks = [
 ];
 
 export const heroData = {
-  badge: "🛠️ Trusted by 50+ brands",
-  headline: "We build digital products that scale.",
+  badge: "🛠️ Trusted by 100+ brands",
+  headline: "We build Websites that scale.",
   subheading: (
     <>
-      From high-performance <strong>WordPress</strong>, <strong>Shopify</strong> platforms to custom <strong>full-stack applications</strong>, <strong>CMS's</strong> & more — Ganesyx builds robust systems that drive business logic, user engagement, and <strong>quality results</strong>.
+      From high-performance <strong style={{ color: 'var(--brand)' }}>WordPress</strong>, <strong style={{ color: 'var(--brand)' }}>Shopify</strong> platforms to custom <strong style={{ color: 'var(--brand)' }}>full-stack applications</strong>, <strong>CMS's</strong> & more — Ganesyx builds robust systems that drive business logic, user engagement, and <strong>quality results</strong>.
     </>
   ),
   primaryCta: "Start a Project",
@@ -34,13 +34,13 @@ export const brandsData = [
   { name: "Nutribay", logo: "/brands/Frame 20.png" },
   { name: "Petal Art", logo: "/brands/Frame 21.png" },
   { name: "NJ", logo: "/brands/Frame 12.png" },
-  { name: "Yasashvi", logo: "/brands/Frame 13.png" },
-  { name: "CollegeTime", logo: "/brands/Frame 14.png" },
-  { name: "GK Pro", logo: "/brands/Frame 15.png" },
-  { name: "Invent Elevator", logo: "/brands/Frame 16.png" },
-  { name: "Kautilya", logo: "/brands/Frame 17.png" },
-  { name: "Miva", logo: "/brands/Frame 18.png" },
-  { name: "MKC", logo: "/brands/Frame 19.png" },
+  { name: "Yasashvi", logo: "/brands/Frame 22.png" },
+  { name: "CollegeTime", logo: "/brands/Frame 23.png" },
+  { name: "GK Pro", logo: "/brands/Frame 26.png" },
+  { name: "Invent Elevator", logo: "/brands/Frame 25.png" },
+  { name: "Kautilya", logo: "/brands/Frame 26.png" },
+  { name: "Miva", logo: "/brands/Frame 12.png" },
+  { name: "MKC", logo: "/brands/Frame 25.png" },
   { name: "Nutribay", logo: "/brands/Frame 20.png" },
   { name: "Petal Art", logo: "/brands/Frame 21.png" },
 ];
@@ -48,8 +48,8 @@ export const brandsData = [
 export const statsData = [
   { value: 150, suffix: "+", label: "Applications Launched" },
   { value: 99.9, suffix: "%", label: "System Uptime" },
-  { value: 50, suffix: "+", label: "Enterprise Clients" },
-  { value: 5, suffix: "+", label: "Years of Experience" },
+  { value: 100, suffix: "+", label: "Enterprise Clients" },
+  { value: 6, suffix: "+", label: "Years of Experience" },
 ];
 
 export const whyChooseUsData = {
@@ -115,39 +115,39 @@ export const problemsData = [
 
 export const worksData = [
   {
-    title: "Luxe E-commerce Engine",
-    category: "Full-Stack Development",
+    title: "Nutribray | India’s Trusted Infant Formula & Baby Food Brand",
+    category: "E-commerce Development",
     description:
-      "A headless e-commerce solution built with Next.js and Shopify API for high-performance retail.",
-    metrics: "40% Faster Checkout",
-    image:
-      "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80",
+      "Nutribray, a renowned infant formula and baby food manufacturer in India, provides premium nourishment for your child's healthy development.",
+    metrics: ["₹50L+ Sales Growth", "CRO-Focused Shopify", "Improved UX/Trust"],
+    url: "https://nutribray.com/",
+    image: "/works/braymil.png",
   },
   {
-    title: "FinTrack Dashboard",
-    category: "Analytics Platform",
+    title: "Invent Elevator | Premium Elevator Solutions & Services",
+    category: "Corporate Web App",
     description:
-      "Real-time analytics platform with complex data visualization and secure API integrations.",
-    metrics: "+99.9% Data Accuracy",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      "Invent Elevator provides high-quality elevator solutions. We optimized their lead handling and digital sales operations through a streamlined web structure.",
+    metrics: ["+60% Lead Efficiency", "+ Inquiry Flow", "Digital Sales Ops"],
+    url: "#",
+    image: "/works/invent.png",
   },
   {
-    title: "EcoGreen Portal",
-    category: "Web Application",
-    description: "A community-driven platform for sustainable living with complex user workflows.",
-    metrics: "100K Active Users",
-    image:
-      "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+    title: "GKPro Academy — CA, IELTS, PTE & Professional Skill Courses",
+    category: "EdTech Platform",
+    description: "GKPro Academy offers professional courses and skill development. We integrated automated administration and scaled their onboarding capacity.",
+    metrics: ["5,000+ Onboarding", "100+ Admin Auto.", "-70% Manual Work"],
+    url: "https://gkproacademy.com",
+    image: "/works/gk-pro.png",
   },
   {
-    title: "Urban Logistics API",
-    category: "Backend Development",
+    title: "Best Kidney Hospital in Pitampura | Delhi Madhuban Kidney Care",
+    category: "Medical SEO & Web",
     description:
-      "Scalable microservices architecture for real-time delivery tracking and route optimization.",
-    metrics: "Low Latency <50ms",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+      "Madhuban Kidney Care is the Best Kidney Hospital in Delhi NCR. We boosted their visibility and inquiry flow through specialized medical SEO.",
+    metrics: ["3X Patient Inquiries", "Improved Local SEO", "Trust-Driven Design"],
+    url: "https://madhubankidneycare.com",
+    image: "/works/mkc.png",
   },
 ];
 
@@ -159,6 +159,10 @@ export const websiteTypesData = [
   { label: "Custom Dashboards", icon: <BarChart3 size={18} /> },
   { label: "Headless CMS", icon: <Database size={18} /> },
   { label: "Integretion Systems", icon: <Globe size={18} /> },
+  { label: "CRM Systems", icon: <Building2 size={18} /> },
+  { label: "E-commerce", icon: <ShoppingBag size={18} /> },
+  { label: "Landing Pages", icon: <Rocket size={18} /> },
+  { label: "Portfolio Sites", icon: <LayoutDashboard size={18} /> },
 ];
 
 export const industriesData = {

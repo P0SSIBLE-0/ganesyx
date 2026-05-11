@@ -1,6 +1,5 @@
 .container {
-  display: inline-flex;
-  align-items: center;
+  display: inline;
 }
 
 .cursor {
@@ -8,14 +7,18 @@
   animation: blink 1.05s step-end infinite;
   margin-left: 2px;
   font-weight: 300;
-  color: inherit;
+  -webkit-text-fill-color: var(--brand);
+  color: var(--brand);
   opacity: 1;
 }
 
 @keyframes blink {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }

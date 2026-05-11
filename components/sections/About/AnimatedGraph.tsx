@@ -234,7 +234,7 @@ export default function AnimatedGraph({
         </svg>
 
         {/* Left Node */}
-        <motion.div className={`${styles.node} ${styles.iconNode}`} style={{ top: "45%", left: "11%" }} variants={nodeVariants}>
+        <motion.div className={`${styles.node} ${styles.iconNode} ${styles.leftNode}`} variants={nodeVariants}>
           <div className={styles.nodeWrapper}>
             <span className={styles.nodeLabelLeft}>{leftNodeLabel}</span>
             <motion.div
@@ -248,7 +248,7 @@ export default function AnimatedGraph({
         </motion.div>
 
         {/* Center Node */}
-        <motion.div className={`${styles.node} ${styles.centerNode}`} style={{ top: "43%", left: "40%" }} variants={nodeVariants}>
+        <motion.div className={`${styles.node} ${styles.centerNode}`} variants={nodeVariants}>
           <div className={styles.nodeWrapper}>
             <motion.div
               className={styles.nodeIcon}
@@ -265,7 +265,7 @@ export default function AnimatedGraph({
         {rightNodes.map((node, index) => {
           const topPercent = (calculateY(index, rightNodes.length) / 500) * 100;
           return (
-            <motion.div key={node.id} className={`${styles.node} ${styles.iconNode}`} style={{ top: `${topPercent - 5}%`, left: "85%" }} variants={nodeVariants}>
+            <motion.div key={node.id} className={`${styles.node} ${styles.iconNode} ${styles.rightNode}`} style={{ top: `${topPercent - 5}%` }} variants={nodeVariants}>
               <div className={styles.nodeWrapper}>
                 <motion.div
                   className={styles.nodeIcon}

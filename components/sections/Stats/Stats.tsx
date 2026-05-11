@@ -45,7 +45,7 @@ function AnimatedCounter({ target, suffix }: { target: number; suffix: string })
 
 export default function Stats() {
   return (
-    <section className={styles.stats}>
+    <section className={styles.stats} id="results">
       <Container>
         <div className={styles.strip}>
           {statsData.map((stat, i) => (

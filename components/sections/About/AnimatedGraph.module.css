@@ -83,9 +83,20 @@
   height: 70px;
 }
 
+.leftNode {
+  top: 45%;
+  left: 11%;
+}
+
 .centerNode {
   width: 80px;
   height: 80px;
+  top: 43%;
+  left: 40%;
+}
+
+.rightNode {
+  left: 80%;
 }
 
 .centerNode .nodeIcon {
@@ -137,6 +148,16 @@
   border-color: var(--brand-light);
 }
 
+@media (max-width: 1024px) {
+  .leftNode {
+    left: 8%;
+  }
+
+  .rightNode {
+    left: 87%;
+  }
+}
+
 @media (max-width: 768px) {
   .svgWrapper {
     height: 400px;
@@ -146,11 +167,22 @@
   .centerNode {
     width: 64px;
     height: 64px;
+    left: 40%;
+    top: 42%;
   }
 
   .iconNode {
     width: 48px;
     height: 48px;
+  }
+
+  .rightNode {
+    left: 82%;
+  }
+
+  .leftNode {
+    left: 10%;
+    top: 45%;
   }
 
   .nodeLabelLeft,

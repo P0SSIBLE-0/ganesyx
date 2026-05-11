@@ -11,15 +11,12 @@
   border: 1px solid var(--border);
 }
 
-.card {
+.cardLink {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: var(--surface);
-  transition: background var(--transition-base);
-}
-
-.card:hover {
-  background: var(--surface-warm);
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Left — content */
@@ -28,7 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .meta {
@@ -52,6 +49,13 @@
   letter-spacing: 0.1em;
 }
 
+.titleWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .title {
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 2.5vw, 1.75rem);
@@ -59,6 +63,28 @@
   color: var(--text-primary);
   letter-spacing: -0.03em;
   line-height: 1.2;
+  transition: color var(--transition-base);
+}
+
+.title:hover {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.linkIcon {
+  color: var(--text-tertiary);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  opacity: 0;
+  transform: translate(-10px, 10px);
+}
+
+.card:hover .linkIcon {
+  opacity: 1;
+  transform: translate(0, 0);
+  color: var(--accent);
 }
 
 .description {
@@ -68,17 +94,70 @@
   max-width: 420px;
 }
 
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
 .metric {
+  position: relative;
   display: inline-flex;
-  align-self: flex-start;
+  padding: 1.5px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.metric::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1.5px;
+  /* This defines the border thickness */
+  background: conic-gradient(#6330c8 50%,
+      #0f053e 50%,
+      #6695e5 40%);
+  background-size: 300% 100%;
+  animation: moveGradient 3s linear infinite;
+
+  /* Creates a hollow mask so only the padding (border) area is visible */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.metricInner {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent);
-  background: var(--accent-alpha);
-  padding: 0.35rem 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand);
+  padding: 0.35rem 0.75rem;
+  border-radius: 5px;
   letter-spacing: 0.02em;
-  margin-top: 0.25rem;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Right — image */
@@ -98,7 +177,7 @@
 }
 
 /* Alternate: even cards flip layout */
-.card:nth-child(even) {
+.card:nth-child(even) .cardLink {
   direction: rtl;
 }
 
@@ -108,12 +187,12 @@
 }
 
 @media (max-width: 768px) {
-  .card {
+  .cardLink {
     display: flex;
     flex-direction: column-reverse;
   }
 
-  .card:nth-child(even) {
+  .card:nth-child(even) .cardLink {
     direction: ltr;
   }
 
@@ -129,5 +208,18 @@
 
   .list {
     gap: .8rem;
+    border: none;
+    background: transparent;
   }
+
+  .linkIcon {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
 }

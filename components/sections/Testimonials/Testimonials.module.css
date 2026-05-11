@@ -136,4 +136,8 @@
     max-width: 300px;
     padding: 1.5rem;
   }
+
+  .stars {
+    margin-top: 1rem;
+  }
 }

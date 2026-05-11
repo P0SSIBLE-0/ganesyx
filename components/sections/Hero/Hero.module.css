@@ -5,18 +5,14 @@
   display: flex;
   align-items: center;
   background:
-    radial-gradient(
-      ellipse 90% 55% at 50% -5%,
+    radial-gradient(ellipse 90% 55% at 50% -5%,
       rgba(98, 30, 210, 0.12) 0%,
       rgba(140, 80, 240, 0.06) 40%,
-      transparent 70%
-    ),
-    linear-gradient(
-      180deg,
+      transparent 70%),
+    linear-gradient(180deg,
       #f5f3ff 0%,
       #faf9ff 40%,
-      #ffffff 100%
-    );
+      #ffffff 100%);
   overflow: hidden;
 }
 
@@ -33,13 +29,11 @@
   height: 70vw;
   max-width: 1000px;
   max-height: 800px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(100, 40, 220, 0.18) 0%,
-    rgba(120, 60, 240, 0.1) 35%,
-    rgba(80, 30, 180, 0.05) 60%,
-    transparent 80%
-  );
+  background: radial-gradient(ellipse at center,
+      rgba(100, 40, 220, 0.18) 0%,
+      rgba(120, 60, 240, 0.1) 35%,
+      rgba(80, 30, 180, 0.05) 60%,
+      transparent 80%);
   filter: blur(60px);
   z-index: 0;
   pointer-events: none;
@@ -175,9 +169,16 @@
 .accentText {
   color: var(--brand);
   font-style: italic;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .accentText {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .bottom {
@@ -205,6 +206,7 @@
   max-width: 600px;
   text-align: center;
   margin: 0 auto;
+  text-transform: uppercase;
 }
 
 .subheading strong {

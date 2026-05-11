@@ -41,7 +41,7 @@ export default function Hero() {
           </div>
 
           <h1 className={styles.headline}>
-            We build products
+            We build websites
             <br />
             that&nbsp;
             <span className={styles.accentText}>

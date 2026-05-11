@@ -8,7 +8,7 @@ export default function Industries() {
   const { title, description, items } = industriesData;
 
   return (
-    <section className={styles.industries} id="industries">
+    <section className={styles.industries} id="solutions">
       <div className={`${styles.decoration} ${styles.decoration1}`} aria-hidden="true" />
       <div className={`${styles.decoration} ${styles.decoration2}`} aria-hidden="true" />
 

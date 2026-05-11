@@ -23,17 +23,31 @@ export default function Partners() {
               <motion.div
                 key={partner.name}
                 className={styles.logoWrapper}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Image
-                  src={partner.src}
-                  alt={partner.name}
-                  width={140}
-                  height={50}
-                  className={styles.logo}
-                />
+                <div className={styles.logoStack}>
+                  <div className={styles.logoBox}>
+                    <Image
+                      src={partner.src}
+                      alt={partner.name}
+                      width={140}
+                      height={40}
+                      className={styles.logo}
+                    />
+                  </div>
+                  <div className={styles.logoBox}>
+                    <Image
+                      src={partner.src}
+                      alt={partner.name}
+                      width={140}
+                      height={40}
+                      className={styles.logo}
+                    />
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

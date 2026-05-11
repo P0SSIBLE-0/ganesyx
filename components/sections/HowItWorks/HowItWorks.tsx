@@ -4,9 +4,9 @@ import Container from "@/components/ui/Container/Container";
 import SectionHeading from "@/components/ui/SectionHeading/SectionHeading";
 import { processData } from "@/data/siteData";
 import { motion, type Variants } from "framer-motion";
+import Button from "@/components/ui/Button/Button";
 
 const containerVariants: Variants = {
-
   visible: {
     transition: {
       staggerChildren: 0.2,
@@ -57,6 +57,15 @@ export default function HowItWorks() {
             </motion.div>
           ))}
         </motion.div>
+
+        <div className={styles.ctaWrapper}>
+          <Button href="#contact" variant="primary" size="lg">
+            Start Your Project
+          </Button>
+          {/* <Button href="#works" variant="secondary" size="lg">
+            View Portfolio
+          </Button> */}
+        </div>
       </Container>
     </section>
   );

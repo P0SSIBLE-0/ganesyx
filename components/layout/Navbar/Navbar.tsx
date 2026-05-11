@@ -26,6 +26,28 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const id = href.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setMobileOpen(false);
+        // Small delay to allow menu closure and body overflow reset
+        setTimeout(() => {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }, 100);
+      }
+    }
+  };
+
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <nav className={`${styles.nav} ${mobileOpen ? styles.navOpen : ""}`} aria-label="Main navigation">
@@ -44,7 +66,11 @@ export default function Navbar() {
         <ul className={styles.links}>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className={styles.link}>
+              <a
+                href={link.href}
+                className={styles.link}
+                onClick={(e) => handleNavClick(e, link.href)}
+              >
                 {link.label}
               </a>
             </li>
@@ -85,7 +111,7 @@ export default function Navbar() {
                       <a
                         href={link.href}
                         className={styles.mobileLink}
-                        onClick={() => setMobileOpen(false)}
+                        onClick={(e) => handleNavClick(e, link.href)}
                       >
                         {link.label}
                       </a>
