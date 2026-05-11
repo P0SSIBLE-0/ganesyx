@@ -70,7 +70,7 @@ export default function Contact() {
               align="left"
             />
             <div className={styles.contactDetails}>
-              <div className={styles.detailItem}>
+              <a href={`mailto:${contactInfo.email}`} className={styles.detailItem}>
                 <span className={styles.detailIcon}>
                   <Mail size={18} />
                 </span>
@@ -78,8 +78,13 @@ export default function Contact() {
                   <p className={styles.detailLabel}>Email</p>
                   <p className={styles.detailValue}>{contactInfo.email}</p>
                 </div>
-              </div>
-              <div className={styles.detailItem}>
+              </a>
+              <a
+                href={`https://www.google.com/maps/place/Ganesyx+Private+Limited+%7C+Best+Digital+Marketing+Agency+in+Delhi/@28.7148831,77.1387015,17z/data=!3m1!4b1!4m6!3m5!1s0x390d013cad083af7:0xee3c42742c8c8191!8m2!3d28.7148831!4d77.1387015!16s%2Fg%2F11m67l4vm3?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.detailItem}
+              >
                 <span className={styles.detailIcon}>
                   <MapPin size={18} />
                 </span>
@@ -87,8 +92,8 @@ export default function Contact() {
                   <p className={styles.detailLabel}>Location</p>
                   <p className={styles.detailValue}>{contactInfo.location}</p>
                 </div>
-              </div>
-              <div className={styles.detailItem}>
+              </a>
+              <a href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`} className={styles.detailItem}>
                 <span className={styles.detailIcon}>
                   <Phone size={18} />
                 </span>
@@ -96,7 +101,7 @@ export default function Contact() {
                   <p className={styles.detailLabel}>Phone</p>
                   <p className={styles.detailValue}>{contactInfo.phone}</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 

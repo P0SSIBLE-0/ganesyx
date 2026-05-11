@@ -31,6 +31,8 @@
   background: var(--surface);
   border: 1px solid var(--border-light);
   transition: all var(--transition-base);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .detailItem:hover {

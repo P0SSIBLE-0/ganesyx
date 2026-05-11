@@ -62,7 +62,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} anesyx. All rights reserved.
+            © {new Date().getFullYear()} Ganesyx. All rights reserved.
           </p>
         </div>
       </Container>

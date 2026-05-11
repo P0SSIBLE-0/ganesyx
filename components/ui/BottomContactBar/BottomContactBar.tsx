@@ -30,7 +30,7 @@ export default function BottomContactBar() {
                 <span>WhatsApp</span>
               </a>
 
-              <a href="#contact" className={styles.talkBtn}>
+              <a href="tel:+919205466534" className={styles.talkBtn}>
                 <PhoneCall size={16} />
                 <span>Let's Talk</span>
               </a>
