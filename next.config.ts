@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
         hostname: "logo.clearbit.com",
       }
     ],
+    qualities: [70, 75, 80, 90, 100],
   },
 };
 
