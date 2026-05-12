@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Contact.module.css";
 import Container from "@/components/ui/Container/Container";
 import SectionHeading from "@/components/ui/SectionHeading/SectionHeading";
@@ -39,22 +39,40 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     service: "",
     message: "",
   });
 
+  // Debounced logging of form data
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      console.log("Form Data (Debounced):", formData);
+    }, 500);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [formData]);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    if (name === "phone") {
+      const numericValue = value.replace(/[^0-9+]/g, "").slice(0, 15);
+      setFormData((prev) => ({ ...prev, [name]: numericValue }));
+      return;
+    }
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Form submission logic would go here
     alert("Thank you! We'll be in touch soon.");
-    setFormData({ name: "", email: "", company: "", service: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", company: "", service: "", message: "" });
   };
 
   return (
@@ -141,6 +159,22 @@ export default function Contact() {
             </div>
             <div className={styles.row}>
               <div className={styles.field}>
+                <label htmlFor="contact-phone" className={styles.label}>
+                  Phone Number
+                </label>
+                <input
+                  id="contact-phone"
+                  name="phone"
+                  type="tel"
+                  className={styles.input}
+                  placeholder="+91 1234567890"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  maxLength={15}
+                  required
+                />
+              </div>
+              <div className={styles.field}>
                 <label htmlFor="contact-company" className={styles.label}>
                   Company
                 </label>
@@ -154,28 +188,29 @@ export default function Contact() {
                   onChange={handleChange}
                 />
               </div>
-              <div className={styles.field}>
-                <label htmlFor="contact-service" className={styles.label}>
-                  Service Needed
-                </label>
-                <select
-                  id="contact-service"
-                  name="service"
-                  className={styles.input}
-                  value={formData.service}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select a solution</option>
-                  {
-                    SERVICES.map((service) => (
-                      <option key={service.value} value={service.value}>
-                        {service.label}
-                      </option>
-                    ))
-                  }
-                </select>
-              </div>
+            </div>
+
+            <div className={styles.field}>
+              <label htmlFor="contact-service" className={styles.label}>
+                Service Needed
+              </label>
+              <select
+                id="contact-service"
+                name="service"
+                className={styles.input}
+                value={formData.service}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select a solution</option>
+                {
+                  SERVICES.map((service) => (
+                    <option key={service.value} value={service.value}>
+                      {service.label}
+                    </option>
+                  ))
+                }
+              </select>
             </div>
             <div className={styles.field}>
               <label htmlFor="contact-message" className={styles.label}>
