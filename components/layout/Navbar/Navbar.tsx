@@ -57,7 +57,6 @@ export default function Navbar() {
             alt="Ganesyx Logo"
             width={791}
             height={181}
-            quality={100}
             className={styles.logoImg}
             priority
           />

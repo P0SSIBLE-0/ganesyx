@@ -105,7 +105,7 @@
   position: relative;
   display: inline-flex;
   padding: 1.5px;
-  border-radius: 6px;
+  border-radius: 20px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
 }
@@ -121,9 +121,9 @@
   border-radius: inherit;
   padding: 1.5px;
   /* This defines the border thickness */
-  background: conic-gradient(#6330c8 50%,
+  background: conic-gradient(#2b1852 50%,
       #0f053e 50%,
-      #6695e5 40%);
+      #055cf3 40%);
   background-size: 300% 100%;
   animation: moveGradient 3s linear infinite;
 
@@ -144,9 +144,9 @@
   font-size: 1rem;
   font-weight: 600;
   color: #fff;
-  background: var(--brand);
+  background-color: #3d1196e1;
   padding: 0.35rem 0.75rem;
-  border-radius: 5px;
+  border-radius: 20px;
   letter-spacing: 0.02em;
 }
 

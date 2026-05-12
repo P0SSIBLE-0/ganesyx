@@ -117,11 +117,11 @@ const nodeVariants: Variants = {
 const activeNodeVariants: Variants = {
   visible: (custom: { color: string, timeTrigger: number }) => ({
     borderColor: ["rgba(226, 221, 213, 1)", custom.color, "rgba(226, 221, 213, 1)"],
-    boxShadow: ["0 0 0px rgba(0,0,0,0)", `0 0 20px ${custom.color}`, "0 0 0px rgba(0,0,0,0)"],
+    boxShadow: ["0 0 0px rgba(0,0,0,0)", `1px 1px 14px ${custom.color}`, "0 0 0px rgba(0,0,0,0)"],
     transition: {
-      duration: 0.6,
+      duration: 0.5,
       repeat: Infinity,
-      repeatDelay: 1.8, // Total cycle is precisely 2.2s (matches 1.2s pulse + 1s delay)
+      repeatDelay: 1.2, // Total cycle is precisely 2.2s (matches 1.2s pulse + 1s delay)
       delay: custom.timeTrigger,
       times: [0, 0.5, 1],
       ease: "easeInOut"

@@ -150,5 +150,13 @@
   .tab {
     padding: 0.4rem .8rem;
     white-space: nowrap;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .tab {
+    padding: 0.4rem 0.6rem;
+    font-size: .8rem;
   }
 }

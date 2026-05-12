@@ -58,7 +58,7 @@ export default function Contact() {
   };
 
   return (
-    <section className={styles.section} id="contact">
+    <section className={styles.section}>
       <Container>
         <div className={styles.wrapper}>
           {/* Left side */}
@@ -106,7 +106,7 @@ export default function Contact() {
           </div>
 
           {/* Right side — form */}
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form id="contact" className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.row}>
               <div className={styles.field}>
                 <label htmlFor="contact-name" className={styles.label}>

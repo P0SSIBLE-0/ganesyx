@@ -16,7 +16,7 @@ export const heroData = {
   headline: "We build Websites that scale.",
   subheading: (
     <>
-      From high-performance <strong style={{ color: 'var(--brand)' }}>WordPress</strong>, <strong style={{ color: 'var(--brand)' }}>Shopify</strong> platforms to custom <strong style={{ color: 'var(--brand)' }}>full-stack applications</strong>, <strong>CMS's</strong> & more — Ganesyx builds robust systems that drive business logic, user engagement, and <strong>quality results</strong>.
+      From high-performance <strong style={{ color: 'var(--brand)' }}>WordPress</strong>, <strong style={{ color: 'var(--brand)' }}>Shopify</strong> platforms to custom <strong style={{ color: 'var(--brand)' }}>full-stack applications</strong>, <strong style={{ color: 'var(--brand)' }}>CMS</strong> & more — Ganesyx builds robust systems that drive business logic, user engagement, and <strong style={{ color: 'var(--brand)' }}>quality results</strong>.
     </>
   ),
   primaryCta: "Start a Project",
@@ -390,6 +390,7 @@ export const faqData = {
       label: "Services",
       faqs: [
         {
+          question: "What technologiess do you specialize in?",
           answer: "We specialize in modern JavaScript/TypeScript ecosystems. For the frontend, we primarily use Next.js and React. For the backend, we leverage Node.js, Express, or serverless architectures on AWS and Vercel. We also have deep expertise in headless e-commerce (Shopify) and custom solutions."
         },
         {

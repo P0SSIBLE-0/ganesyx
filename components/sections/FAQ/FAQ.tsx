@@ -47,7 +47,7 @@ export default function FAQ() {
                     <motion.div
                       layoutId="activeTab"
                       className={styles.activeIndicator}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
                     />
                   )}
                 </button>
